@@ -2,18 +2,21 @@
 
 /**
  * _memcpy - Copies @n bytes from the memory area pointed
- *           to by @b into that pointed to by @s.
- * @s: A pointer to the memory area to copy @b into.
- * @b: The source buffer to copy characters from.
- * @n: The number of bytes to copy from @b.
+ *           to by @src into that pointed to by @dest.
+ * @dest: A pointer to the memory area to copy @src into.
+ * @src: The source buffer to copy characters from.
+ * @n: The number of bytes to copy from @src.
  *
- * Return: A pointer to the destination buffer @s.
+ * Return: A pointer to the destination buffer @dest.
  */
-char *_memset(char *s, char b, unsigned int n)
+char *_memcpy(char *dest, char *src, unsigned int n)
 {
 	unsigned int i;
 
 	for (i = 0; i < n; i++)
-		s[i] = b;
-	return (s);
+	{
+		*(dest + i) = *(src + i);
+	}
+	return (dest);
 }
+
