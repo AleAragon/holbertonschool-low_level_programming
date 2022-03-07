@@ -11,8 +11,8 @@
  */
 char *_strdup(char *str)
 {
-	char *dup;
-	int i, len = 0;
+	char *duplicate;
+	int index, len = 0;
 
 	if (str == NULL)
 		return (NULL);
@@ -20,15 +20,15 @@ char *_strdup(char *str)
 	for (index = 0; str[index]; index++)
 		len++;
 
-	dup = malloc(sizeof(char) * (len + 1));
+	duplicate = malloc(sizeof(char) * (len + 1));
 
-	if (dup == NULL)
+	if (duplicate == NULL)
 		return (NULL);
 
-	for (i = 0; str[i]; i++)
-		dup[i] = str[i];
+	for (index = 0; str[index]; index++)
+		duplicate[index] = str[index];
 
-	dup[len] = '\0';
+	duplicate[len] = '\0';
 
-	return (dup);
+	return (duplicate);
 }
