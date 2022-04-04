@@ -10,15 +10,13 @@
  */
 int clear_bit(unsigned long int *n, unsigned int index)
 {
-	unsigned long int bits;
+	unsigned long int t_binary;
 
-	if (n == NULL)
-		return (-1);
-
-	bits = 1 << index;
-
-	if ((bits | *n) == *n)
-		*n = *n ^ bits;
-
-	return (1);
+	t_binary = (sizeof(*(n)) * 8);
+	if (index < t_binary)
+	{
+		*(n) = (~(1 << index) & *(n));
+		return (1);
+	}
+	return (-1);
 }
